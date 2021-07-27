@@ -1,12 +1,12 @@
+import re
+
 
 class TagManipulator:
-    def __init__(self):
-        return
-
-    def parse_string(self, expr):
-        res= []
-
-        if  len(expr) <1:
-            return res
-
-        return res
+    def parse_string(self, expr, regex=",\\ *"):
+        result = []
+                    
+        tempResult = re.split( regex, expr )
+        if( len(tempResult[0]) > 0 ):
+            result = tempResult 
+        
+        return result
